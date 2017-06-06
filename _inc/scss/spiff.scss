@@ -1,0 +1,215 @@
+@import "compass/css3";
+
+body{
+    
+    button{
+        font-size: 1.4rem;
+        padding: 0.8214em 1.5714em;
+        background-color: rgba(51, 51, 51, 0.7);
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        &:hover{
+            background-color: rgba(51, 51, 51, 0.8);
+        }
+    }
+    
+    /*accordion menu
+    //http://codepen.io/anon/pen/MwoWQy
+    */
+    ul#menu-radios {
+        list-style: none;
+        padding: 0;
+        position:relative;
+        li {
+            margin: 0;
+            text-align:center;
+            position:relative;
+
+            ul.sub-menu {
+                list-style: none;
+                overflow: hidden;
+                li{
+                    border:none;
+                }
+            }
+            
+            &:not(.current-menu-ancestor){
+                ul.sub-menu {
+                    display: none;
+                }
+            }
+
+            &.current-menu-active {
+            }
+
+            &.current-menu-ancestor > a,  &.current-menu-item > a {
+                color:black;
+            }
+
+            &.menu-item-has-children {
+                > a:after {
+                    font-family: FontAwesome;
+                    content: "\f107";
+                    position:absolute;
+                    right:20px;
+                }
+                &.current-menu-active {
+                    > a {
+                        &:after {
+                          content: "\f106";
+                        }
+                    }
+                }
+            }
+
+            /*
+            &.current-menu-item {
+                > a {
+                }
+                ul.sub-menu {
+                  //display: block;
+                }
+            }
+            */
+
+            a {
+                line-height:2em;
+                padding:0 1em;
+                color:grey;
+                &:hover {
+                    color:#444;
+                }
+
+                width: 100%;
+                display: block;
+                transition: background .3s ease;
+
+            }
+
+            li{
+                font-size:0.9em;
+            }
+
+            /*
+            &#menu-item-19674, //local
+            &#menu-item-326, &#menu-item-215,{
+                a{
+                    @extend button;
+                    
+                }
+                a:hover,&.current-menu-item a{
+                }
+                .current-menu-item{
+                    @include opacity(0.8);
+                }
+            }
+            &#menu-item-326{ //pépites
+                a{
+                }
+            }
+            &#menu-item-215 { //wizard
+                border:none;
+            }
+            &#menu-item-3{
+                border-top: none;
+                margin-top: 1em;
+            }
+            */
+
+        }
+    }
+    
+    &.single{
+        article{
+            .post-thumbnail{
+                padding-top: 1.5em;
+                img{
+                    max-height: 150px;
+                    width: auto;
+                }
+            }
+        }
+    }
+    
+    .wpsstm-playlists-loop{
+        position:relative;
+        margin: 1em 8.3333%;
+        box-sizing: border-box;
+        /* clear fix */
+        &:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+        .masonry-sizer,
+        .hentry {
+          width: calc(25%);
+        }
+        .hentry{
+            float:left;
+            margin:0;
+            margin:.4em;
+            width:calc(25% - .8em);
+
+            .post-thumbnail{
+                margin-bottom:1em;
+            }
+            .entry-title{
+                font-size:1em;
+                a{
+                    border-bottom: none;
+                }
+
+
+                text-align:center;
+            }
+            .entry-content{
+                
+            }
+            .entry-metas{
+                font-size: .8em;
+                
+                div{
+                    &.spiff-sation-refresh{
+                        text-align: center;
+                        background-color: #fcf8e3;
+                        padding: .5em 0;
+                    }
+                    &.spiff-station-tags{
+                        text-align:center;
+                        padding: .5em;
+                        line-height: .8em;
+                        ul{
+                            margin:0;
+                            list-style-type: none;
+
+                            li{
+                                display:inline;
+                                a{
+                                    color:#d5c5bf;
+                                    text-transform: uppercase;
+                                    font-size: 0.8em;
+                                    font-family: sans-serif;
+                                    &:before{
+                                        font-family: FontAwesome;
+                                        content: "\f292";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    #reddit-scrobbling-notice {
+      background: rgba(252, 248, 227, 0.38);
+      padding: 0.25em 1em;
+    }
+}
