@@ -68,13 +68,13 @@ body button:hover {
   background-color: rgba(51, 51, 51, 0.8);
 }
 /* line 65, ../scss/spiff.scss */
-body ul#menu-radios {
+body ul#menu-sidebar {
   list-style: none;
   padding: 0;
   position: relative;
 }
 /* line 69, ../scss/spiff.scss */
-body ul#menu-radios li {
+body ul#menu-sidebar li {
   margin: 0;
   text-align: center;
   position: relative;
@@ -114,35 +114,35 @@ body ul#menu-radios li {
   */
 }
 /* line 74, ../scss/spiff.scss */
-body ul#menu-radios li ul.sub-menu {
+body ul#menu-sidebar li ul.sub-menu {
   list-style: none;
   overflow: hidden;
 }
 /* line 77, ../scss/spiff.scss */
-body ul#menu-radios li ul.sub-menu li {
+body ul#menu-sidebar li ul.sub-menu li {
   border: none;
 }
 /* line 83, ../scss/spiff.scss */
-body ul#menu-radios li:not(.current-menu-ancestor) ul.sub-menu {
+body ul#menu-sidebar li:not(.current-menu-ancestor) ul.sub-menu {
   display: none;
 }
 /* line 91, ../scss/spiff.scss */
-body ul#menu-radios li.current-menu-ancestor > a, body ul#menu-radios li.current-menu-item > a {
+body ul#menu-sidebar li.current-menu-ancestor > a, body ul#menu-sidebar li.current-menu-item > a {
   color: black;
 }
 /* line 96, ../scss/spiff.scss */
-body ul#menu-radios li.menu-item-has-children > a:after {
+body ul#menu-sidebar li.menu-item-has-children > a:after {
   font-family: FontAwesome;
   content: "\f107";
   position: absolute;
   right: 20px;
 }
 /* line 104, ../scss/spiff.scss */
-body ul#menu-radios li.menu-item-has-children.current-menu-active > a:after {
+body ul#menu-sidebar li.menu-item-has-children.current-menu-active > a:after {
   content: "\f106";
 }
 /* line 121, ../scss/spiff.scss */
-body ul#menu-radios li a {
+body ul#menu-sidebar li a {
   line-height: 2em;
   padding: 0 1em;
   color: grey;
@@ -151,11 +151,11 @@ body ul#menu-radios li a {
   transition: background .3s ease;
 }
 /* line 125, ../scss/spiff.scss */
-body ul#menu-radios li a:hover {
+body ul#menu-sidebar li a:hover {
   color: #444;
 }
 /* line 135, ../scss/spiff.scss */
-body ul#menu-radios li li {
+body ul#menu-sidebar li li {
   font-size: 0.9em;
 }
 /* line 170, ../scss/spiff.scss */

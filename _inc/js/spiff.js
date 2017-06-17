@@ -2,13 +2,13 @@ jQuery(document).ready(function($) {
     /*
     menu
     */
-    var radio_menu = $('ul#menu-radios');
+    var sidebar_menu = $('ul#menu-sidebar');
     //menu click
-    radio_menu.find('.menu-item-has-children > a').click(function(e) {
+    sidebar_menu.find('.menu-item-has-children > a').click(function(e) {
         
         e.preventDefault();
 
-        var current_li_el = radio_menu.find('current-menu-active');
+        var current_li_el = sidebar_menu.find('current-menu-active');
         
         var li_el = $(this).parent('li');
         var li_submenu_el = li_el.find('> ul');
