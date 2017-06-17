@@ -2,6 +2,48 @@
 
 body{
     
+    &.page-template-homepage{
+        .entry-content{
+                padding: 0 10% 2em;
+        }
+        #homepage-picks{
+            padding:1em;
+            .wpsstm-playlists-loop{
+            }
+        }
+        #menu-home-picks{
+            list-style: none;
+            text-align:center;
+            width:100%;
+            display:block;
+            font-size:1.2em;
+            padding:.5em;
+            li{
+                display:inline;
+                a{
+                    text-decoration: underline;
+                    padding:.25em;
+                    @include border-radius(3px);
+                }
+                &:not(:hover):not(.ui-tabs-active){
+                    @include opacity(.3);
+                }
+                
+            }
+        }
+        
+        #homepage-picks{
+            clear:both;
+        }
+        #wpsstm-picks-widgets{
+            clear:both;
+        }
+
+        .wpsstm-widget-more-picks{
+            text-align:center;
+        }
+    }
+    
     button{
         font-size: 1.4rem;
         padding: 0.8214em 1.5714em;
@@ -135,7 +177,29 @@ body{
         }
     }
     
+    #wpsstm-picks-widgets{
+        position:relative;
+        .wpsstm-widget-picks{
+            position:relative;
+            margin: 1em 8.3333%;
+            .wpsstm-playlists-loop{
+                .hentry {
+                }
+            }
+            .wpsstm-widget-more-picks{
+                a{
+                    text-decoration:underline;
+                }
+            }
+        }
+        
+    }
+
+    
+
+    
     .wpsstm-playlists-loop{
+        
         position:relative;
         margin: 1em 8.3333%;
         box-sizing: border-box;
@@ -145,10 +209,10 @@ body{
           display: block;
           clear: both;
         }
-        .masonry-sizer,
-        .hentry {
-          width: calc(25%);
+        .masonry-sizer{
+            position:absolute;
         }
+        .masonry-sizer,
         .hentry{
             float:left;
             margin:0;

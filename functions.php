@@ -1,25 +1,42 @@
 <?php
 
 class SpiffV2Theme{
+    
     public $version = '1.0.2';
-    function __construct(){
+    public $home_picks_count = 8;
+    
+    /**
+    * @var The one true Instance
+    */
+    private static $instance;
+
+    public static function instance() {
+            if ( ! isset( self::$instance ) ) {
+                    self::$instance = new SpiffV2Theme;
+                    self::$instance->init();
+            }
+            return self::$instance;
+    }
+
+    private function __construct() { /* Do nothing here */ }
+
+    function init(){
+        add_action( 'init', array($this,'register_menus') );
         add_action( 'wp_enqueue_scripts', array($this,'enqueue_script_styles') );
         add_filter( 'the_content', array($this,'reddit_content_notice') );
         add_filter( 'the_content', array($this,'reddit_content_description') );
         add_filter( 'body_class', array($this,'bp_remove_two_column_body_class'), 20, 2);
         add_filter( 'term_link', array($this,'station_term_link'), 10, 3);
     }
+    
+    function register_menus() {
+        register_nav_menu('spiff-home-picks-menu',__( 'Home picks menu','spiff' ));
+    }
 
     function enqueue_script_styles() {
         wp_register_style( 'parent-style', get_template_directory_uri() . '/style.css' ); //parent style
         wp_enqueue_style( 'spiff', get_stylesheet_directory_uri() . '/_inc/css/spiff.css',array('parent-style'),$this->version );
-        wp_enqueue_script( 'spiff',get_stylesheet_directory_uri() . '/_inc/js/spiff.js', array('jquery'),$this->version );
-        
-        //masonery
-        if ( (is_archive() && (get_post_type()=='wpsstm_live_playlist')) || did_action('bp_include') ) { //TO FIX BP check is playlists menu
-            //wp_register_script( 'jquery-imagesloaded', 'http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js' );
-            wp_enqueue_script( 'spiff-masonry',get_stylesheet_directory_uri() . '/_inc/js/spiff-masonry.js', array('jquery-masonry'));
-        }
+        wp_enqueue_script( 'spiff',get_stylesheet_directory_uri() . '/_inc/js/spiff.js', array('jquery','jquery-ui-core','jquery-ui-tabs','jquery-masonry','jquery.toggleChildren'),$this->version );
     }
     
     function reddit_content_notice($content){
@@ -57,5 +74,9 @@ class SpiffV2Theme{
     
 }
 
-$spiff_theme = new SpiffV2Theme();
+function spiff_theme() {
+	return SpiffV2Theme::instance();
+}
+
+spiff_theme();
 

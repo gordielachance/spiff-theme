@@ -15,7 +15,7 @@
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
-global $spiff_theme, $wp_query;
+global $wp_query;
 get_header(); ?>
 
 	<section id="primary" class="content-area">
@@ -55,7 +55,7 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
             
-            <div id="content" class="wpsstm-playlists-loop">
+            <div id="content" class="wpsstm-playlists-loop wpsstm-masonry">
                 <?php get_template_part('loop', 'wpsstm_live_playlist'); ?>
             </div>
 

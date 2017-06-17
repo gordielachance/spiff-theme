@@ -22,4 +22,29 @@ jQuery(document).ready(function($) {
         }
         li_submenu_el.slideToggle(350);
     });
+
+    /*
+    masonry
+    */
+    
+    var $container = $('.wpsstm-playlists-loop.wpsstm-masonry');
+    var $items = $container.find('.hentry');
+
+    $container.masonry({
+        itemSelector : '.hentry',
+        percentPosition: true,
+        columnWidth: '.masonry-sizer'
+    }); 
+    
+    /*
+    Picks
+    */
+    
+    $( "#homepage-picks" ).tabs({
+        childrenSelector:   '.hentry'
+    });
+    
+    
+    
+    
 });
