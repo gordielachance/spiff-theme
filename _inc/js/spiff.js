@@ -29,12 +29,16 @@ jQuery(document).ready(function($) {
     
     var $container = $('.wpsstm-playlists-loop.wpsstm-masonry');
     var $items = $container.find('.hentry');
-
-    $container.masonry({
-        itemSelector : '.hentry',
-        percentPosition: true,
-        columnWidth: '.masonry-sizer'
-    }); 
+    $items.hide();
+    
+    $container.imagesLoaded( function() {
+        $items.fadeIn();
+        $container.masonry({
+            itemSelector : '.hentry',
+            percentPosition: true,
+            columnWidth: '.masonry-sizer'
+        }); 
+    });
     
     /*
     Picks
