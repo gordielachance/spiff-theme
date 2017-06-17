@@ -72,6 +72,10 @@ class SpiffV2Theme{
         return $termlink;
     }
     
+    function get_station_tags_list(){
+        return get_the_term_list( null, 'post_tag', '<div class="spiff-station-tags"><ul><li>', '</li> <li>', '</li></ul></div>' );
+    }
+    
 }
 
 function spiff_theme() {

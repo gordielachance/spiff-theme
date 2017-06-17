@@ -35,7 +35,7 @@ if ( have_posts() ){
                         ?>
                     </div>
                     <div class="entry-metas">
-                        <?php echo get_the_term_list( null, 'post_tag', '<div class="spiff-station-tags"><ul><li>', '</li> <li>', '</li></ul></div>' );?>
+                        <?php echo spiff_theme()->get_station_tags_list();?>
                         <?php 
                         if ( $freq = wpsstm_get_tracklist_refresh_frequency_human() ){
                             ?>

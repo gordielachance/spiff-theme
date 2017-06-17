@@ -221,6 +221,11 @@ body .wpsstm-playlists-loop .masonry-sizer .entry-title a,
 body .wpsstm-playlists-loop .hentry .entry-title a {
   border-bottom: none;
 }
+/* line 234, ../scss/spiff.scss */
+body .wpsstm-playlists-loop .masonry-sizer .entry-content,
+body .wpsstm-playlists-loop .hentry .entry-content {
+  padding: .5em;
+}
 /* line 237, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas,
 body .wpsstm-playlists-loop .hentry .entry-metas {
@@ -236,22 +241,24 @@ body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-sation-refresh {
 /* line 246, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags {
-  text-align: center;
+  text-align: right;
   padding: .5em;
   line-height: .8em;
+  font-weight: 100;
+  font-size: .9em;
 }
-/* line 250, ../scss/spiff.scss */
+/* line 252, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul {
   margin: 0;
   list-style-type: none;
 }
-/* line 254, ../scss/spiff.scss */
+/* line 256, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li {
   display: inline;
 }
-/* line 256, ../scss/spiff.scss */
+/* line 258, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a {
   color: #d5c5bf;
@@ -259,13 +266,13 @@ body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a 
   font-size: 0.8em;
   font-family: sans-serif;
 }
-/* line 261, ../scss/spiff.scss */
+/* line 263, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a:before,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a:before {
   font-family: FontAwesome;
   content: "\f292";
 }
-/* line 275, ../scss/spiff.scss */
+/* line 277, ../scss/spiff.scss */
 body #reddit-scrobbling-notice {
   background: rgba(252, 248, 227, 0.38);
   padding: 0.25em 1em;

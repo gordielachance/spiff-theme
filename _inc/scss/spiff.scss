@@ -232,7 +232,7 @@ body{
                 text-align:center;
             }
             .entry-content{
-                
+                padding: .5em;
             }
             .entry-metas{
                 font-size: .8em;
@@ -244,9 +244,11 @@ body{
                         padding: .5em 0;
                     }
                     &.spiff-station-tags{
-                        text-align:center;
+                        text-align:right;
                         padding: .5em;
                         line-height: .8em;
+                        font-weight: 100;
+                        font-size: .9em;
                         ul{
                             margin:0;
                             list-style-type: none;
