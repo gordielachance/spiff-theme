@@ -4,10 +4,10 @@
         console.log("toutou");
         var $container = $('.wpsstm-playlists-loop.wpsstm-masonry');
         var $items = $container.find('.hentry');
-        $items.hide();
+        //$items.hide();
 
         $container.imagesLoaded( function() {
-            $items.fadeIn();
+            //$items.fadeIn();
             $container.masonry({
                 itemSelector : '.hentry',
                 percentPosition: true,

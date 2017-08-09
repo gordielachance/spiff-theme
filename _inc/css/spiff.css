@@ -1,19 +1,27 @@
 @charset "UTF-8";
 /* line 3, ../scss/spiff.scss */
+.spiff-notice, body.page-template-homepage #wpsstm-picks-widgets .wpsstm-widget-picks .wpsstm-widget-more-picks, body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-sation-refresh,
+body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-sation-refresh {
+  text-align: center;
+  background-color: #fcf8e3;
+  padding: .5em 0;
+}
+
+/* line 9, ../scss/spiff.scss */
 body {
   /*accordion menu
   //http://codepen.io/anon/pen/MwoWQy
   */
 }
-/* line 6, ../scss/spiff.scss */
+/* line 12, ../scss/spiff.scss */
 body.page-template-homepage .entry-content {
   padding: 0 10% 2em;
 }
-/* line 9, ../scss/spiff.scss */
+/* line 15, ../scss/spiff.scss */
 body.page-template-homepage #homepage-picks {
   padding: 1em;
 }
-/* line 14, ../scss/spiff.scss */
+/* line 20, ../scss/spiff.scss */
 body.page-template-homepage #menu-home-picks {
   list-style: none;
   text-align: center;
@@ -22,11 +30,11 @@ body.page-template-homepage #menu-home-picks {
   font-size: 1.2em;
   padding: .5em;
 }
-/* line 21, ../scss/spiff.scss */
+/* line 27, ../scss/spiff.scss */
 body.page-template-homepage #menu-home-picks li {
   display: inline;
 }
-/* line 23, ../scss/spiff.scss */
+/* line 29, ../scss/spiff.scss */
 body.page-template-homepage #menu-home-picks li a {
   text-decoration: underline;
   padding: .25em;
@@ -34,24 +42,26 @@ body.page-template-homepage #menu-home-picks li a {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 28, ../scss/spiff.scss */
+/* line 34, ../scss/spiff.scss */
 body.page-template-homepage #menu-home-picks li:not(:hover):not(.ui-tabs-active) {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
-/* line 35, ../scss/spiff.scss */
+/* line 41, ../scss/spiff.scss */
 body.page-template-homepage #homepage-picks {
   clear: both;
 }
-/* line 38, ../scss/spiff.scss */
+/* line 45, ../scss/spiff.scss */
 body.page-template-homepage #wpsstm-picks-widgets {
   clear: both;
+  position: relative;
 }
-/* line 42, ../scss/spiff.scss */
-body.page-template-homepage .wpsstm-widget-more-picks {
-  text-align: center;
+/* line 48, ../scss/spiff.scss */
+body.page-template-homepage #wpsstm-picks-widgets .wpsstm-widget-picks {
+  position: relative;
+  margin: 1em 8.3333%;
 }
-/* line 47, ../scss/spiff.scss */
+/* line 64, ../scss/spiff.scss */
 body button {
   font-size: 1.4rem;
   padding: 0.8214em 1.5714em;
@@ -63,17 +73,17 @@ body button {
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 57, ../scss/spiff.scss */
+/* line 74, ../scss/spiff.scss */
 body button:hover {
   background-color: rgba(51, 51, 51, 0.8);
 }
-/* line 65, ../scss/spiff.scss */
+/* line 82, ../scss/spiff.scss */
 body ul#menu-sidebar {
   list-style: none;
   padding: 0;
   position: relative;
 }
-/* line 69, ../scss/spiff.scss */
+/* line 86, ../scss/spiff.scss */
 body ul#menu-sidebar li {
   margin: 0;
   text-align: center;
@@ -113,35 +123,35 @@ body ul#menu-sidebar li {
   }
   */
 }
-/* line 74, ../scss/spiff.scss */
+/* line 91, ../scss/spiff.scss */
 body ul#menu-sidebar li ul.sub-menu {
   list-style: none;
   overflow: hidden;
 }
-/* line 77, ../scss/spiff.scss */
+/* line 94, ../scss/spiff.scss */
 body ul#menu-sidebar li ul.sub-menu li {
   border: none;
 }
-/* line 83, ../scss/spiff.scss */
+/* line 100, ../scss/spiff.scss */
 body ul#menu-sidebar li:not(.current-menu-ancestor) ul.sub-menu {
   display: none;
 }
-/* line 91, ../scss/spiff.scss */
+/* line 108, ../scss/spiff.scss */
 body ul#menu-sidebar li.current-menu-ancestor > a, body ul#menu-sidebar li.current-menu-item > a {
   color: black;
 }
-/* line 96, ../scss/spiff.scss */
+/* line 113, ../scss/spiff.scss */
 body ul#menu-sidebar li.menu-item-has-children > a:after {
   font-family: FontAwesome;
   content: "\f107";
   position: absolute;
   right: 20px;
 }
-/* line 104, ../scss/spiff.scss */
+/* line 121, ../scss/spiff.scss */
 body ul#menu-sidebar li.menu-item-has-children.current-menu-active > a:after {
   content: "\f106";
 }
-/* line 121, ../scss/spiff.scss */
+/* line 138, ../scss/spiff.scss */
 body ul#menu-sidebar li a {
   line-height: 2em;
   padding: 0 1em;
@@ -150,54 +160,41 @@ body ul#menu-sidebar li a {
   display: block;
   transition: background .3s ease;
 }
-/* line 125, ../scss/spiff.scss */
+/* line 142, ../scss/spiff.scss */
 body ul#menu-sidebar li a:hover {
   color: #444;
 }
-/* line 135, ../scss/spiff.scss */
+/* line 152, ../scss/spiff.scss */
 body ul#menu-sidebar li li {
   font-size: 0.9em;
 }
-/* line 170, ../scss/spiff.scss */
+/* line 187, ../scss/spiff.scss */
 body.single article .post-thumbnail {
   padding-top: 1.5em;
 }
-/* line 172, ../scss/spiff.scss */
+/* line 189, ../scss/spiff.scss */
 body.single article .post-thumbnail img {
   max-height: 150px;
   width: auto;
 }
-/* line 180, ../scss/spiff.scss */
-body #wpsstm-picks-widgets {
-  position: relative;
-}
-/* line 182, ../scss/spiff.scss */
-body #wpsstm-picks-widgets .wpsstm-widget-picks {
-  position: relative;
-  margin: 1em 8.3333%;
-}
-/* line 190, ../scss/spiff.scss */
-body #wpsstm-picks-widgets .wpsstm-widget-picks .wpsstm-widget-more-picks a {
-  text-decoration: underline;
-}
-/* line 201, ../scss/spiff.scss */
+/* line 197, ../scss/spiff.scss */
 body .wpsstm-playlists-loop {
   position: relative;
   margin: 1em 8.3333%;
   box-sizing: border-box;
   /* clear fix */
 }
-/* line 207, ../scss/spiff.scss */
+/* line 203, ../scss/spiff.scss */
 body .wpsstm-playlists-loop:after {
   content: '';
   display: block;
   clear: both;
 }
-/* line 212, ../scss/spiff.scss */
+/* line 208, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer {
   position: absolute;
 }
-/* line 215, ../scss/spiff.scss */
+/* line 211, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer,
 body .wpsstm-playlists-loop .hentry {
   float: left;
@@ -205,40 +202,33 @@ body .wpsstm-playlists-loop .hentry {
   margin: .4em;
   width: calc(25% - .8em);
 }
-/* line 222, ../scss/spiff.scss */
+/* line 218, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .post-thumbnail,
 body .wpsstm-playlists-loop .hentry .post-thumbnail {
   margin-bottom: 1em;
 }
-/* line 225, ../scss/spiff.scss */
+/* line 221, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-title,
 body .wpsstm-playlists-loop .hentry .entry-title {
   font-size: 1em;
   text-align: center;
 }
-/* line 227, ../scss/spiff.scss */
+/* line 223, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-title a,
 body .wpsstm-playlists-loop .hentry .entry-title a {
   border-bottom: none;
 }
-/* line 234, ../scss/spiff.scss */
+/* line 230, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-content,
 body .wpsstm-playlists-loop .hentry .entry-content {
   padding: .5em;
 }
-/* line 237, ../scss/spiff.scss */
+/* line 233, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas,
 body .wpsstm-playlists-loop .hentry .entry-metas {
   font-size: .8em;
 }
-/* line 241, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-sation-refresh,
-body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-sation-refresh {
-  text-align: center;
-  background-color: #fcf8e3;
-  padding: .5em 0;
-}
-/* line 246, ../scss/spiff.scss */
+/* line 240, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags {
   text-align: right;
@@ -247,18 +237,18 @@ body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags {
   font-weight: 100;
   font-size: .9em;
 }
-/* line 252, ../scss/spiff.scss */
+/* line 246, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul {
   margin: 0;
   list-style-type: none;
 }
-/* line 256, ../scss/spiff.scss */
+/* line 250, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li {
   display: inline;
 }
-/* line 258, ../scss/spiff.scss */
+/* line 252, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a {
   color: #d5c5bf;
@@ -266,13 +256,13 @@ body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a 
   font-size: 0.8em;
   font-family: sans-serif;
 }
-/* line 263, ../scss/spiff.scss */
+/* line 257, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a:before,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a:before {
   font-family: FontAwesome;
   content: "\f292";
 }
-/* line 277, ../scss/spiff.scss */
+/* line 271, ../scss/spiff.scss */
 body #reddit-scrobbling-notice {
   background: rgba(252, 248, 227, 0.38);
   padding: 0.25em 1em;

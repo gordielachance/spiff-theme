@@ -1,5 +1,11 @@
 @import "compass/css3";
 
+.spiff-notice{
+    text-align: center;
+    background-color: #fcf8e3;
+    padding: .5em 0;
+}
+
 body{
     
     &.page-template-homepage{
@@ -35,13 +41,24 @@ body{
         #homepage-picks{
             clear:both;
         }
+
         #wpsstm-picks-widgets{
             clear:both;
-        }
+            position:relative;
+            .wpsstm-widget-picks{
+                position:relative;
+                margin: 1em 8.3333%;
+                .wpsstm-playlists-loop{
+                    .hentry {
+                    }
+                }
+                .wpsstm-widget-more-picks{
+                    @extend .spiff-notice;
+                }
+            }
 
-        .wpsstm-widget-more-picks{
-            text-align:center;
         }
+        
     }
     
     button{
@@ -176,28 +193,7 @@ body{
             }
         }
     }
-    
-    #wpsstm-picks-widgets{
-        position:relative;
-        .wpsstm-widget-picks{
-            position:relative;
-            margin: 1em 8.3333%;
-            .wpsstm-playlists-loop{
-                .hentry {
-                }
-            }
-            .wpsstm-widget-more-picks{
-                a{
-                    text-decoration:underline;
-                }
-            }
-        }
-        
-    }
 
-    
-
-    
     .wpsstm-playlists-loop{
         
         position:relative;
@@ -239,9 +235,7 @@ body{
                 
                 div{
                     &.spiff-sation-refresh{
-                        text-align: center;
-                        background-color: #fcf8e3;
-                        padding: .5em 0;
+                        @extend .spiff-notice;
                     }
                     &.spiff-station-tags{
                         text-align:right;
