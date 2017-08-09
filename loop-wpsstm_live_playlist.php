@@ -5,7 +5,10 @@ if ( have_posts() ){
     <?php
     
     while( have_posts() ) {
-        the_post(); ?>
+        the_post();
+        global $wpsstm_tracklist;
+        $tracklist = $wpsstm_tracklist;
+        ?>
 
         <!-- article -->
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -37,9 +40,10 @@ if ( have_posts() ){
                     <div class="entry-metas">
                         <?php echo spiff_theme()->get_station_tags_list();?>
                         <?php 
-                        if ( $freq = wpsstm_get_tracklist_refresh_frequency_human() ){
+                        if ( $rate = $tracklist->get_refresh_rate() ){
+                            
                             ?>
-                            <div class="spiff-sation-refresh"><?php echo $freq;?></div>
+                            <div class="spiff-sation-refresh"><i class="fa fa-rss" aria-hidden="true"></i> <?php printf(__('every %s','wpsstm'),$rate);?></div>
                             <?php
                         }
                         ?>
