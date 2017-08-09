@@ -27,6 +27,43 @@ class SpiffV2Theme{
         add_filter( 'the_content', array($this,'reddit_content_description') );
         add_filter( 'body_class', array($this,'bp_remove_two_column_body_class'), 20, 2);
         add_filter( 'term_link', array($this,'station_term_link'), 10, 3);
+        
+        //tracklists
+        add_filter('wpsstm_input_tracks', array($this,'radiomeuh_input_tracks'),10,2);
+        add_filter('wpsstm_input_tracks', array($this,'ness_radio_input_tracks'),10,2);
+        
+    }
+    
+    function radiomeuh_input_tracks($tracks,$tracklist){
+        $post_slug = get_post_field( 'post_name', $tracklist->post_id );
+        if ($post_slug != 'radio-meuh') return $tracks;
+        
+        //remove jingles
+        foreach((array)$tracks as $key=>$track){
+            $artist = strtolower($track->artist);
+            if ($artist=='jingle'){
+                unset($tracks[$key]);
+            }
+        }
+        
+        return $tracks;
+        
+    }
+    
+    function ness_radio_input_tracks($tracks,$tracklist){
+        $post_slug = get_post_field( 'post_name', $tracklist->post_id );
+        if ($post_slug != 'ness-radio') return $tracks;
+        
+        //remove jingles
+        foreach((array)$tracks as $key=>$track){
+            $artist = strtolower($track->artist);
+            if (strpos($artist, 'www.nessradio.com') !== false) {
+                unset($tracks[$key]);
+            }
+        }
+
+        return $tracks;
+        
     }
     
     function register_menus() {
