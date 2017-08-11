@@ -31,6 +31,7 @@ class SpiffV2Theme{
         //tracklists
         add_filter('wpsstm_input_tracks', array($this,'radiomeuh_input_tracks'),10,2);
         add_filter('wpsstm_input_tracks', array($this,'ness_radio_input_tracks'),10,2);
+        add_filter('wpsstm_input_tracks', array($this,'nova_input_tracks'),10,2);
         
     }
     
@@ -59,6 +60,22 @@ class SpiffV2Theme{
             $artist = strtolower($track->artist);
             if (strpos($artist, 'www.nessradio.com') !== false) {
                 unset($tracks[$key]);
+            }
+        }
+
+        return $tracks;
+        
+    }
+    
+    function nova_input_tracks($tracks,$tracklist){
+        $post_slug = get_post_field( 'post_name', $tracklist->post_id );
+        if ($post_slug != 'radio-nova') return $tracks;
+        
+        //remove default image
+        $default_image = 'http://www.novaplanet.com/sites/default/files/imagecache/cetaitkoicetitre_cover/sites/all/themes/nova/images/cover-null.jpg';
+        foreach((array)$tracks as $key=>$track){
+            if ($track->image_url == $default_image) {
+                $track->image_url = null;
             }
         }
 
