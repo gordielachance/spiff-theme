@@ -58,7 +58,8 @@ class SpiffV2Theme{
         //remove jingles
         foreach((array)$tracks as $key=>$track){
             $artist = strtolower($track->artist);
-            if (strpos($artist, 'www.nessradio.com') !== false) {
+            $artist = trim($artist);
+            if ( $artist == 'www.nessradio.com' ) {
                 unset($tracks[$key]);
             }
         }
