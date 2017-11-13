@@ -40,10 +40,10 @@ if ( have_posts() ){
                     <div class="entry-metas">
                         <?php echo spiff_theme()->get_station_tags_list();?>
                         <?php 
-                        if ( $rate = $tracklist->get_refresh_rate() ){
-                            
+        
+                        if ( ($tracklist->tracklist_type == 'live') && ( $rate = $tracklist->get_time_before_refresh() ) ){
                             ?>
-                            <div class="spiff-sation-refresh"><i class="fa fa-rss" aria-hidden="true"></i> <?php printf(__('every %s','wpsstm'),$rate);?></div>
+                            <div class="spiff-station-refresh"><i class="fa fa-rss" aria-hidden="true"></i> <?php printf(__('cached for %s','wpsstm'),$rate);?></div>
                             <?php
                         }
                         ?>
