@@ -234,7 +234,9 @@ body{
                 font-size: .8em;
                 
                 div{
-                    &.spiff-sation-refresh{
+                    &.spiff-station-refresh{
+                        font-size: .75em;
+                        line-height: .75em;
                         @extend .spiff-notice;
                     }
                     &.spiff-station-tags{

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* line 3, ../scss/spiff.scss */
-.spiff-notice, body.page-template-homepage #wpsstm-picks-widgets .wpsstm-widget-picks .wpsstm-widget-more-picks, body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-sation-refresh,
-body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-sation-refresh {
+.spiff-notice, body.page-template-homepage #wpsstm-picks-widgets .wpsstm-widget-picks .wpsstm-widget-more-picks, body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-refresh,
+body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-refresh {
   text-align: center;
   background-color: #fcf8e3;
   padding: .5em 0;
@@ -228,7 +228,13 @@ body .wpsstm-playlists-loop .masonry-sizer .entry-metas,
 body .wpsstm-playlists-loop .hentry .entry-metas {
   font-size: .8em;
 }
-/* line 240, ../scss/spiff.scss */
+/* line 237, ../scss/spiff.scss */
+body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-refresh,
+body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-refresh {
+  font-size: .75em;
+  line-height: .75em;
+}
+/* line 242, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags {
   text-align: right;
@@ -237,18 +243,18 @@ body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags {
   font-weight: 100;
   font-size: .9em;
 }
-/* line 246, ../scss/spiff.scss */
+/* line 248, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul {
   margin: 0;
   list-style-type: none;
 }
-/* line 250, ../scss/spiff.scss */
+/* line 252, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li {
   display: inline;
 }
-/* line 252, ../scss/spiff.scss */
+/* line 254, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a {
   color: #d5c5bf;
@@ -256,13 +262,13 @@ body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a 
   font-size: 0.8em;
   font-family: sans-serif;
 }
-/* line 257, ../scss/spiff.scss */
+/* line 259, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a:before,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a:before {
   font-family: FontAwesome;
   content: "\f292";
 }
-/* line 271, ../scss/spiff.scss */
+/* line 273, ../scss/spiff.scss */
 body #reddit-scrobbling-notice {
   background: rgba(252, 248, 227, 0.38);
   padding: 0.25em 1em;
