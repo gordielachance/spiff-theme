@@ -13,6 +13,11 @@ body {
   //http://codepen.io/anon/pen/MwoWQy
   */
 }
+/* line 11, ../scss/spiff.scss */
+body.page-template-homepage {
+  /*override default UI styling*/
+  /*END override default UI styling*/
+}
 /* line 12, ../scss/spiff.scss */
 body.page-template-homepage .entry-content {
   padding: 0 10% 2em;
@@ -20,21 +25,17 @@ body.page-template-homepage .entry-content {
 /* line 15, ../scss/spiff.scss */
 body.page-template-homepage #homepage-picks {
   padding: 1em;
+  border: none;
 }
-/* line 20, ../scss/spiff.scss */
+/* line 21, ../scss/spiff.scss */
 body.page-template-homepage #menu-home-picks {
   list-style: none;
   text-align: center;
   width: 100%;
   display: block;
   font-size: 1.2em;
-  padding: .5em;
 }
-/* line 27, ../scss/spiff.scss */
-body.page-template-homepage #menu-home-picks li {
-  display: inline;
-}
-/* line 29, ../scss/spiff.scss */
+/* line 30, ../scss/spiff.scss */
 body.page-template-homepage #menu-home-picks li a {
   text-decoration: underline;
   padding: .25em;
@@ -42,26 +43,35 @@ body.page-template-homepage #menu-home-picks li a {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 34, ../scss/spiff.scss */
+/* line 35, ../scss/spiff.scss */
 body.page-template-homepage #menu-home-picks li:not(:hover):not(.ui-tabs-active) {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
-/* line 41, ../scss/spiff.scss */
+/* line 46, ../scss/spiff.scss */
+body.page-template-homepage #menu-home-picks li {
+  display: inline-block;
+  float: none;
+}
+/* line 49, ../scss/spiff.scss */
+body.page-template-homepage #menu-home-picks li a {
+  text-decoration: none;
+}
+/* line 57, ../scss/spiff.scss */
 body.page-template-homepage #homepage-picks {
   clear: both;
 }
-/* line 45, ../scss/spiff.scss */
+/* line 61, ../scss/spiff.scss */
 body.page-template-homepage #wpsstm-picks-widgets {
   clear: both;
   position: relative;
 }
-/* line 48, ../scss/spiff.scss */
+/* line 64, ../scss/spiff.scss */
 body.page-template-homepage #wpsstm-picks-widgets .wpsstm-widget-picks {
   position: relative;
   margin: 1em 8.3333%;
 }
-/* line 64, ../scss/spiff.scss */
+/* line 80, ../scss/spiff.scss */
 body button {
   font-size: 1.4rem;
   padding: 0.8214em 1.5714em;
@@ -73,17 +83,17 @@ body button {
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 74, ../scss/spiff.scss */
+/* line 90, ../scss/spiff.scss */
 body button:hover {
   background-color: rgba(51, 51, 51, 0.8);
 }
-/* line 82, ../scss/spiff.scss */
+/* line 98, ../scss/spiff.scss */
 body ul#menu-sidebar {
   list-style: none;
   padding: 0;
   position: relative;
 }
-/* line 86, ../scss/spiff.scss */
+/* line 102, ../scss/spiff.scss */
 body ul#menu-sidebar li {
   margin: 0;
   text-align: center;
@@ -123,35 +133,35 @@ body ul#menu-sidebar li {
   }
   */
 }
-/* line 91, ../scss/spiff.scss */
+/* line 107, ../scss/spiff.scss */
 body ul#menu-sidebar li ul.sub-menu {
   list-style: none;
   overflow: hidden;
 }
-/* line 94, ../scss/spiff.scss */
+/* line 110, ../scss/spiff.scss */
 body ul#menu-sidebar li ul.sub-menu li {
   border: none;
 }
-/* line 100, ../scss/spiff.scss */
+/* line 116, ../scss/spiff.scss */
 body ul#menu-sidebar li:not(.current-menu-ancestor) ul.sub-menu {
   display: none;
 }
-/* line 108, ../scss/spiff.scss */
+/* line 124, ../scss/spiff.scss */
 body ul#menu-sidebar li.current-menu-ancestor > a, body ul#menu-sidebar li.current-menu-item > a {
   color: black;
 }
-/* line 113, ../scss/spiff.scss */
+/* line 129, ../scss/spiff.scss */
 body ul#menu-sidebar li.menu-item-has-children > a:after {
   font-family: FontAwesome;
   content: "\f107";
   position: absolute;
   right: 20px;
 }
-/* line 121, ../scss/spiff.scss */
+/* line 137, ../scss/spiff.scss */
 body ul#menu-sidebar li.menu-item-has-children.current-menu-active > a:after {
   content: "\f106";
 }
-/* line 138, ../scss/spiff.scss */
+/* line 154, ../scss/spiff.scss */
 body ul#menu-sidebar li a {
   line-height: 2em;
   padding: 0 1em;
@@ -160,41 +170,41 @@ body ul#menu-sidebar li a {
   display: block;
   transition: background .3s ease;
 }
-/* line 142, ../scss/spiff.scss */
+/* line 158, ../scss/spiff.scss */
 body ul#menu-sidebar li a:hover {
   color: #444;
 }
-/* line 152, ../scss/spiff.scss */
+/* line 168, ../scss/spiff.scss */
 body ul#menu-sidebar li li {
   font-size: 0.9em;
 }
-/* line 187, ../scss/spiff.scss */
+/* line 203, ../scss/spiff.scss */
 body.single article .post-thumbnail {
   padding-top: 1.5em;
 }
-/* line 189, ../scss/spiff.scss */
+/* line 205, ../scss/spiff.scss */
 body.single article .post-thumbnail img {
   max-height: 150px;
   width: auto;
 }
-/* line 197, ../scss/spiff.scss */
+/* line 213, ../scss/spiff.scss */
 body .wpsstm-playlists-loop {
   position: relative;
   margin: 1em 8.3333%;
   box-sizing: border-box;
   /* clear fix */
 }
-/* line 203, ../scss/spiff.scss */
+/* line 219, ../scss/spiff.scss */
 body .wpsstm-playlists-loop:after {
   content: '';
   display: block;
   clear: both;
 }
-/* line 208, ../scss/spiff.scss */
+/* line 224, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer {
   position: absolute;
 }
-/* line 211, ../scss/spiff.scss */
+/* line 227, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer,
 body .wpsstm-playlists-loop .hentry {
   float: left;
@@ -202,39 +212,39 @@ body .wpsstm-playlists-loop .hentry {
   margin: .4em;
   width: calc(25% - .8em);
 }
-/* line 218, ../scss/spiff.scss */
+/* line 234, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .post-thumbnail,
 body .wpsstm-playlists-loop .hentry .post-thumbnail {
   margin-bottom: 1em;
 }
-/* line 221, ../scss/spiff.scss */
+/* line 237, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-title,
 body .wpsstm-playlists-loop .hentry .entry-title {
   font-size: 1em;
   text-align: center;
 }
-/* line 223, ../scss/spiff.scss */
+/* line 239, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-title a,
 body .wpsstm-playlists-loop .hentry .entry-title a {
   border-bottom: none;
 }
-/* line 230, ../scss/spiff.scss */
+/* line 246, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-content,
 body .wpsstm-playlists-loop .hentry .entry-content {
   padding: .5em;
 }
-/* line 233, ../scss/spiff.scss */
+/* line 249, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas,
 body .wpsstm-playlists-loop .hentry .entry-metas {
   font-size: .8em;
 }
-/* line 237, ../scss/spiff.scss */
+/* line 253, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-refresh,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-refresh {
   font-size: .75em;
   line-height: .75em;
 }
-/* line 242, ../scss/spiff.scss */
+/* line 258, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags {
   text-align: right;
@@ -243,18 +253,18 @@ body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags {
   font-weight: 100;
   font-size: .9em;
 }
-/* line 248, ../scss/spiff.scss */
+/* line 264, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul {
   margin: 0;
   list-style-type: none;
 }
-/* line 252, ../scss/spiff.scss */
+/* line 268, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li {
   display: inline;
 }
-/* line 254, ../scss/spiff.scss */
+/* line 270, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a {
   color: #d5c5bf;
@@ -262,13 +272,13 @@ body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a 
   font-size: 0.8em;
   font-family: sans-serif;
 }
-/* line 259, ../scss/spiff.scss */
+/* line 275, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a:before,
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a:before {
   font-family: FontAwesome;
   content: "\f292";
 }
-/* line 273, ../scss/spiff.scss */
+/* line 289, ../scss/spiff.scss */
 body #reddit-scrobbling-notice {
   background: rgba(252, 248, 227, 0.38);
   padding: 0.25em 1em;

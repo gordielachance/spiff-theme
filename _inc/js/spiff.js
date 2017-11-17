@@ -69,6 +69,7 @@
                 */
             }
         });
+        $("#homepage-picks, #homepage-picks *").removeClass('ui-widget ui-widget-content ui-widget-header ui-tabs-panel');
 
         $('#homepage-picks li.ui-tabs-nav a').click(function() {
             /*
