@@ -34,6 +34,7 @@
                 'tag'               => 'megapick',
                 'posts_per_page'    => -1,
                 'orderby'           => 'rand',
+                'author'            => 1,
             );
             query_posts($megapicks_args);
             if( have_posts() ){
@@ -63,7 +64,8 @@
 
             $newpicks_args = array(
                 'post_type'         => wpsstm()->post_type_live_playlist,
-                'posts_per_page'    => spiff_theme()->home_picks_count
+                'posts_per_page'    => spiff_theme()->home_picks_count,
+                'author'            => 1,
             );
             query_posts($newpicks_args);
             if( have_posts() ){
@@ -120,7 +122,8 @@
                 'post_type'         => wpsstm()->post_type_live_playlist,
                 'posts_per_page'    => spiff_theme()->home_picks_count,
                 'tag'               => 'radio',
-                'orderby'           => 'trending'
+                'orderby'           => 'trending',
+                'author'            => 1,
             );
             query_posts($newpicks_args);
             if( have_posts() ){
