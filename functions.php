@@ -3,7 +3,7 @@
 class SpiffV2Theme{
     
     public $version = '1.0.2';
-    public $home_picks_count = 8;
+    public $home_picks_count = 16;
     
     /**
     * @var The one true Instance

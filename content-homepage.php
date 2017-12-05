@@ -45,7 +45,7 @@
                     </div>
                     <p class="wpsstm-widget-more-picks">
                         <?php 
-                        $editorspicks_link = sprintf('<a href="%s">%s</a>',home_url('tag/editors-pick/?post_type=wpsstm_live_playlist'),"#editors-pick");
+                        $editorspicks_link = sprintf('<a href="%s">%s</a>',home_url('tag/editors-pick/?post_type=wpsstm_live_playlist&spiff=1'),"#editors-pick");
                         printf(__('Want more ? %s','spiff'),$editorspicks_link);
                         ?>
                     </p>
@@ -75,7 +75,7 @@
                         <?php get_template_part('loop', 'wpsstm_live_playlist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">
-                        <?php echo sprintf('%s <a href="%s">%s</a>',__('Want more ?','spiff'),home_url('?post_type=wpsstm_live_playlist'),__('New tracklists','spiff'));?>
+                        <?php echo sprintf('%s <a href="%s">%s</a>',__('Want more ?','spiff'),home_url('?post_type=wpsstm_live_playlist&spiff=1'),__('New tracklists','spiff'));?>
                     </p>
                 </div><!-- .entry-content -->
                 <?php
@@ -133,7 +133,7 @@
                         <?php get_template_part('loop', 'wpsstm_live_playlist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">
-                        <?php echo sprintf('%s <a href="%s">%s</a>',__('Want more ?','spiff'),home_url('tag/radio/?post_type=wpsstm_live_playlist'),'#radio');?>
+                        <?php echo sprintf('%s <a href="%s">%s</a>',__('Want more ?','spiff'),home_url('tag/radio/?post_type=wpsstm_live_playlist&spiff=1'),'#radio');?>
                     </p>
                 </div><!-- .entry-content -->
                 <?php
