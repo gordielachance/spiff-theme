@@ -22,11 +22,14 @@ class SpiffV2Theme{
 
     function init(){
         add_action( 'init', array($this,'register_menus') );
+        add_filter( 'query_vars', array($this,'add_query_vars') );
         add_action( 'wp_enqueue_scripts', array($this,'enqueue_script_styles') );
         add_filter( 'the_content', array($this,'reddit_content_notice') );
         add_filter( 'the_content', array($this,'reddit_content_description') );
         add_filter( 'body_class', array($this,'bp_remove_two_column_body_class'), 20, 2);
         add_filter( 'term_link', array($this,'station_term_link'), 10, 3);
+        
+        add_filter( 'pre_get_posts', array($this, 'pre_get_posts_editor'));
         
         //tracklists
         add_filter('wpsstm_input_tracks', array($this,'radiomeuh_input_tracks'),10,2);
@@ -35,12 +38,14 @@ class SpiffV2Theme{
         
     }
     
+    function add_query_vars( $qvars ) {
+        $qvars[] = 'spiff';
+        return $qvars;
+    }
+    
     function pre_get_posts_editor( $query ) {
-        
-        $is_editor = ( isset($_REQUEST['editor']) ) ? true : false;
-        
-        if ( $is_editor && $query->is_main_query() && ( $query->get('post_type')==wpsstm()->post_type_live_playlist ) ){
 
+        if ( $query->get('spiff') && ( $query->get('post_type')==wpsstm()->post_type_live_playlist ) ){
             $query->set( 'author', 1);
         }
 
