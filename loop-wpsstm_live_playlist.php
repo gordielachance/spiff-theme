@@ -39,14 +39,6 @@ if ( have_posts() ){
                     </div>
                     <div class="entry-metas">
                         <?php echo spiff_theme()->get_station_tags_list();?>
-                        <?php 
-        
-                        if ( ($tracklist->tracklist_type == 'live') && ( $rate = $tracklist->get_time_before_refresh() ) ){
-                            ?>
-                            <div class="spiff-station-refresh"><i class="fa fa-rss" aria-hidden="true"></i> <?php printf(__('cached for %s','wpsstm'),$rate);?></div>
-                            <?php
-                        }
-                        ?>
                     </div>
 
             <?php //edit_post_link(); ?>
