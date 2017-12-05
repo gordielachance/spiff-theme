@@ -35,6 +35,18 @@ class SpiffV2Theme{
         
     }
     
+    function pre_get_posts_editor( $query ) {
+        
+        $is_editor = ( isset($_REQUEST['editor']) ) ? true : false;
+        
+        if ( $is_editor && $query->is_main_query() && ( $query->get('post_type')==wpsstm()->post_type_live_playlist ) ){
+
+            $query->set( 'author', 1);
+        }
+
+        return $query;
+    }
+    
     function radiomeuh_input_tracks($tracks,$tracklist){
         $post_slug = get_post_field( 'post_name', $tracklist->post_id );
         if ($post_slug != 'radio-meuh') return $tracks;
