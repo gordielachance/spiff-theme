@@ -31,6 +31,8 @@ class SpiffV2Theme{
         
         add_filter( 'pre_get_posts', array($this, 'pre_get_posts_editor'));
         
+        add_action( 'template_include', array($this, 'force_tracklist_archive_template') );
+        
         //tracklists
         add_filter('wpsstm_input_tracks', array($this,'radiomeuh_input_tracks'),10,2);
         add_filter('wpsstm_input_tracks', array($this,'ness_radio_input_tracks'),10,2);
@@ -148,6 +150,27 @@ class SpiffV2Theme{
         return get_the_term_list( null, 'post_tag', '<div class="spiff-station-tags"><ul><li>', '</li> <li>', '</li></ul></div>' );
     }
     
+    /*
+    Parent theme has author archives, etc.
+    So always load our archive tracklist template here.
+    */
+    function force_tracklist_archive_template($template){
+
+        if ( is_archive() ){
+            $tracklist_post_types = array(
+                wpsstm()->post_type_album,
+                wpsstm()->post_type_playlist,
+                wpsstm()->post_type_live_playlist
+            );
+
+            if ( in_array(get_post_type(),$tracklist_post_types) ){
+                $template = get_stylesheet_directory() . '/archive-tracklist.php';
+            }
+        }
+        
+        return $template;
+    }
+
 }
 
 function spiff_theme() {
