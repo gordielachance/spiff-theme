@@ -56,7 +56,7 @@ get_header(); ?>
 			</header><!-- .page-header -->
             
             <div id="content" class="wpsstm-playlists-loop wpsstm-masonry">
-                <?php get_template_part('loop', 'wpsstm_live_playlist'); ?>
+                <?php get_template_part('loop', 'tracklist'); ?>
             </div>
 
 			<?php
