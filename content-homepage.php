@@ -41,7 +41,7 @@
                 ?>
                 <div id="wpsstm-widget-megapicks" class="wpsstm-widget-picks">
                     <div class="wpsstm-playlists-loop wpsstm-masonry">
-                        <?php get_template_part('loop', 'wpsstm_live_playlist'); ?>
+                        <?php get_template_part('loop','tracklist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">
                         <?php 
@@ -72,7 +72,7 @@
                 ?>
                 <div id="wpsstm-widget-newpicks" class="wpsstm-widget-picks">
                     <div class="wpsstm-playlists-loop wpsstm-masonry">
-                        <?php get_template_part('loop', 'wpsstm_live_playlist'); ?>
+                        <?php get_template_part('loop','tracklist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">
                         <?php echo sprintf('%s <a href="%s">%s</a>',__('Want more ?','spiff'),home_url('?post_type=wpsstm_live_playlist&spiff=1'),__('New tracklists','spiff'));?>
@@ -100,7 +100,7 @@
                 ?>
                 <div id="wpsstm-widget-trendingpicks" class="wpsstm-widget-picks">
                     <div class="wpsstm-playlists-loop wpsstm-masonry">
-                        <?php get_template_part('loop', 'wpsstm_live_playlist'); ?>
+                        <?php get_template_part('loop','tracklist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">
                         <?php echo sprintf('%s <a href="%s">%s</a>',__('Want more ?','spiff'),home_url('?post_type=wpsstm_live_playlist&orderby=trending'),__('Trending tracklists','spiff'));?>
@@ -130,7 +130,7 @@
                 ?>
                 <div id="wpsstm-widget-radiopicks" class="wpsstm-widget-picks">
                     <div class="wpsstm-playlists-loop wpsstm-masonry">
-                        <?php get_template_part('loop', 'wpsstm_live_playlist'); ?>
+                        <?php get_template_part('loop','tracklist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">
                         <?php echo sprintf('%s <a href="%s">%s</a>',__('Want more ?','spiff'),home_url('tag/radio/?post_type=wpsstm_live_playlist&spiff=1'),'#radio');?>

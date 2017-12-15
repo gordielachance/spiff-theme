@@ -32,9 +32,7 @@ class SpiffV2Theme{
         add_filter( 'pre_get_posts', array($this, 'pre_get_posts_editor'));
         
         add_action( 'template_include', array($this, 'force_tracklist_archive_template') );
-        
-        add_filter( 'wp_get_nav_menu_items', array($this, 'my_music_menu'), 10, 3 );
-        
+
         //tracklists
         add_filter('wpsstm_input_tracks', array($this,'radiomeuh_input_tracks'),10,2);
         add_filter('wpsstm_input_tracks', array($this,'ness_radio_input_tracks'),10,2);
@@ -172,55 +170,7 @@ class SpiffV2Theme{
         
         return $template;
     }
-    
-    /*
-    Temporary and foirax function to hack the 'My Music' menu and its 'My Playlists' and 'My Live Playlists' submenus.  
-    Should be removed once the wpsstm BuddyPress stuff works.
-    */
-    function my_music_menu($items, $menu, $args) {
-        global $wp_query;
-        
-        if ( is_admin() ) return $items;
 
-        foreach($items as $key=>$item){
-            if ( ($item->post_title == 'My Music') || ($item->post_title == 'My Playlists') || ($item->post_title == 'My Live Playlists') ){
-                $user_id = get_current_user_id();
-                if ( !$user_id ){ //unset menu
-                    unset($items[$key]);
-                }else{ 
-                    //replace %d by current user ID in URL
-                    $item->url = sprintf($item->url,(int)$user_id);
-                    
-                    $query_author = $wp_query->get('author');
-                    $query_post_type = $wp_query->get('post_type');
-                    
-                    if ( in_array($query_post_type,array('wpsstm_playlist','wpsstm_live_playlist')) ){
-                        
-                        if ( $query_author == $user_id ){
-                            if ($item->post_title == 'My Music'){
-                                $item->classes[] = 'current-menu-ancestor';
-                                $item->classes[] = 'current-menu-parent';
-                            }
-
-                            if ( ($query_post_type == 'wpsstm_playlist') && ($item->post_title == 'My Playlists') ){
-                                $item->classes[] = 'current-menu-item';
-                            }
-
-                            if ( ($query_post_type == 'wpsstm_live_playlist') && ($item->post_title == 'My Live Playlists') ){
-                                $item->classes[] = 'current-menu-item';
-                            }
-                        }
-                    }
-                    
-
-                    
-                }
-            }
-        }
-
-        return $items;
-    }
-    
 }
 
 function spiff_theme() {
