@@ -1,7 +1,6 @@
 (function($){
 
     function spiffTilesMasonry(){
-        console.log("toutou");
         var $container = $('.wpsstm-playlists-loop.wpsstm-masonry');
         var $items = $container.find('.hentry');
         //$items.hide();
