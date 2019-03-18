@@ -30,14 +30,15 @@ class SpiffV2Theme{
         add_filter( 'term_link', array($this,'station_term_link'), 10, 3);
         
         add_filter( 'pre_get_posts', array($this, 'pre_get_posts_editor'));
+        add_action( 'pre_get_posts', array($this, 'sort_by_popularity'));
         
-        add_action( 'template_include', array($this, 'force_tracklist_archive_template') );
+        add_action( 'template_include', array($this, 'force_tracklist_archive_template'), 9 );
 
         //tracklists
         add_filter('wpsstm_input_tracks', array($this,'radiomeuh_input_tracks'),10,2);
         add_filter('wpsstm_input_tracks', array($this,'ness_radio_input_tracks'),10,2);
         add_filter('wpsstm_input_tracks', array($this,'nova_input_tracks'),10,2);
-        
+
     }
     
     function add_query_vars( $qvars ) {
@@ -46,9 +47,28 @@ class SpiffV2Theme{
     }
     
     function pre_get_posts_editor( $query ) {
+        if ( $query->get('spiff') && function_exists('wpsstm') ){
+            
+            //check this is a tracklist query
+            //https://stackoverflow.com/a/7542708/782013
+            $post_types = $query->get('post_type');
+            $has_tracklist_type = (count(array_intersect((array)$post_types, wpsstm()->tracklist_post_types)) > 0);
+            if ( $has_tracklist_type ){
+                $query->set( 'author', 1);
+            }
+        }
 
-        if ( $query->get('spiff') && ( $query->get('post_type')==wpsstm()->post_type_live_playlist ) ){
-            $query->set( 'author', 1);
+        return $query;
+    }
+    
+    //TOUFIX check https://plugins.trac.wordpress.org/browser/post-views-for-jetpack/
+    function sort_by_popularity( $query ) {
+        $orderby = $query->get('orderby');
+
+        if ( function_exists('wpsstm') && ($orderby == 'views') ){
+            $query->set('meta_key', 'post_views_count');
+            //$query->set('orderby', 'meta_value_num');
+            $query->set('order', 'DESC');
         }
 
         return $query;
@@ -110,14 +130,18 @@ class SpiffV2Theme{
     function enqueue_script_styles() {
         wp_register_style( 'parent-style', get_template_directory_uri() . '/style.css' ); //parent style
         wp_enqueue_style( 'spiff', get_stylesheet_directory_uri() . '/_inc/css/spiff.css',array('parent-style'),$this->version );
-        wp_enqueue_script( 'spiff',get_stylesheet_directory_uri() . '/_inc/js/spiff.js', array('jquery','jquery-ui-core','jquery-ui-tabs','jquery-masonry','jquery.toggleChildren'),$this->version );
+        wp_enqueue_script( 'spiff',get_stylesheet_directory_uri() . '/_inc/js/spiff.js', array('jquery','jquery-ui-core','jquery-ui-tabs','jquery-masonry'),$this->version );
     }
     
     function reddit_content_notice($content){
+        //TO FIX fucks up because of wpsstm_lastfm()
+        /*
         if ( !has_tag('reddit') ) return $content;
         if ( !wpsstm_lastfm()->lastfm_user->is_user_api_logged() ) return $content;
         $notice = '<p id="reddit-scrobbling-notice"><i class="fa fa-lastfm" aria-hidden="true"></i> <small>Tracks datas from <a href="https://www.reddit.com/" target="_blank" rel="noopener noreferrer">Reddit</a> are not always correct.  You should maybe disable the Last.fm scrobbler if it is active.</small></p>';
         return $notice . $content;
+        */
+        return $content;
     }
     
     function reddit_content_description($content){
