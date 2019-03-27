@@ -1,0 +1,37 @@
+/**
+ * BOX HACKING
+ */
+/* line 7, ../scss/masonry.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 11, ../scss/masonry.scss */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* line 17, ../scss/masonry.scss */
+.spiff-masonry-wrapper {
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* line 21, ../scss/masonry.scss */
+.spiff-masonry-wrapper .spiff-masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: 0;
+}
+/* line 26, ../scss/masonry.scss */
+.spiff-masonry-wrapper .spiff-masonry-grid .spiff-masonry-item {
+  margin: 0;
+  padding: 0;
+}
+/* line 31, ../scss/masonry.scss */
+.spiff-masonry-wrapper .spiff-masonry-grid .spiff-masonry-item .spiff-masonry-content {
+  overflow: hidden;
+}

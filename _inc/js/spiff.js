@@ -1,27 +1,6 @@
 (function($){
 
-    function spiffTilesMasonry(){
-        var $container = $('.wpsstm-playlists-loop.wpsstm-masonry');
-        var $items = $container.find('.hentry');
-        //$items.hide();
-
-        $container.imagesLoaded( function() {
-            //$items.fadeIn();
-            $container.masonry({
-                itemSelector : '.hentry',
-                percentPosition: true,
-                columnWidth: '.masonry-sizer',
-                transitionDuration: 0
-            }); 
-        });
-    }
-    
     $(document).ready(function($) {
-
-        /*
-        masonry
-        */
-        spiffTilesMasonry();
 
         /*
         Picks
@@ -32,7 +11,7 @@
             activate: function(event ,ui){
                 spiffTilesMasonry();
                 /*
-                var $container = $('.wpsstm-playlists-loop.wpsstm-masonry');
+                var $container = $('.wpsstm-playlists-loop.spiff-masonry-wrapper');
                 var $items = $container.find('.hentry');
                 $container.imagesLoaded( function() {
                     $items.fadeIn();

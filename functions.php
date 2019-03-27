@@ -129,8 +129,16 @@ class SpiffV2Theme{
 
     function enqueue_script_styles() {
         wp_register_style( 'parent-style', get_template_directory_uri() . '/style.css' ); //parent style
-        wp_enqueue_style( 'spiff', get_stylesheet_directory_uri() . '/_inc/css/spiff.css',array('parent-style'),$this->version );
-        wp_enqueue_script( 'spiff',get_stylesheet_directory_uri() . '/_inc/js/spiff.js', array('jquery','jquery-ui-core','jquery-ui-tabs','jquery-masonry'),$this->version );
+        
+        //masonry
+        //wp_register_script( 'imagesloaded','//unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js',null,'4.1.4' );
+        wp_register_script( 'spiff-masonry',get_stylesheet_directory_uri() . '/_inc/js/masonry.js',array('jquery','imagesloaded'),$this->version, true );
+        wp_register_style( 'spiff-masonry', get_stylesheet_directory_uri() . '/_inc/css/masonry.css',null,$this->version );
+        
+        
+        wp_enqueue_style( 'spiff', get_stylesheet_directory_uri() . '/_inc/css/spiff.css',array('parent-style','spiff-masonry'),$this->version );
+        
+        wp_enqueue_script( 'spiff',get_stylesheet_directory_uri() . '/_inc/js/spiff.js', array('jquery','jquery-ui-core','jquery-ui-tabs','spiff-masonry'),$this->version );
     }
     
     function reddit_content_notice($content){

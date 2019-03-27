@@ -101,27 +101,25 @@ body{
           display: block;
           clear: both;
         }
-        .masonry-sizer{
-            position:absolute;
-        }
-        .masonry-sizer,
-        .hentry{
-            float:left;
-            margin:0;
-            margin:.4em;
-            width:calc(25% - .8em);
 
-            .post-thumbnail{
-                margin-bottom:1em;
+        .hentry{
+            position:relative;
+            figure{
+                margin:0;
+                position:absolute;
+                img{
+                    vertical-align: top;
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .entry-title{
                 font-size:1em;
+                text-align:center;
                 a{
                     border-bottom: none;
                 }
-
-
-                text-align:center;
             }
             .entry-content{
                 padding: .5em;

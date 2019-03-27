@@ -40,7 +40,7 @@
             if( have_posts() ){
                 ?>
                 <div id="wpsstm-widget-megapicks" class="wpsstm-widget-picks">
-                    <div class="wpsstm-playlists-loop wpsstm-masonry">
+                    <div class="wpsstm-playlists-loop spiff-masonry-wrapper">
                         <?php get_template_part('loop','tracklist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">
@@ -71,7 +71,7 @@
             if( have_posts() ){
                 ?>
                 <div id="wpsstm-widget-newpicks" class="wpsstm-widget-picks">
-                    <div class="wpsstm-playlists-loop wpsstm-masonry">
+                    <div class="wpsstm-playlists-loop spiff-masonry-wrapper">
                         <?php get_template_part('loop','tracklist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">
@@ -99,7 +99,7 @@
             if( have_posts() ){
                 ?>
                 <div id="wpsstm-widget-trendingpicks" class="wpsstm-widget-picks">
-                    <div class="wpsstm-playlists-loop wpsstm-masonry">
+                    <div class="wpsstm-playlists-loop spiff-masonry-wrapper">
                         <?php get_template_part('loop','tracklist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">
@@ -129,7 +129,7 @@
             if( have_posts() ){
                 ?>
                 <div id="wpsstm-widget-radiopicks" class="wpsstm-widget-picks">
-                    <div class="wpsstm-playlists-loop wpsstm-masonry">
+                    <div class="wpsstm-playlists-loop spiff-masonry-wrapper">
                         <?php get_template_part('loop','tracklist'); ?>
                     </div>
                     <p class="wpsstm-widget-more-picks">

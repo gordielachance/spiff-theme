@@ -91,46 +91,40 @@ body .wpsstm-playlists-loop:after {
   display: block;
   clear: both;
 }
-/* line 104, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer {
-  position: absolute;
+/* line 105, ../scss/spiff.scss */
+body .wpsstm-playlists-loop .hentry {
+  position: relative;
 }
 /* line 107, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer,
-body .wpsstm-playlists-loop .hentry {
-  float: left;
+body .wpsstm-playlists-loop .hentry figure {
   margin: 0;
-  margin: .4em;
-  width: calc(25% - .8em);
+  position: absolute;
 }
-/* line 114, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .post-thumbnail,
-body .wpsstm-playlists-loop .hentry .post-thumbnail {
-  margin-bottom: 1em;
+/* line 110, ../scss/spiff.scss */
+body .wpsstm-playlists-loop .hentry figure img {
+  vertical-align: top;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 /* line 117, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-title,
 body .wpsstm-playlists-loop .hentry .entry-title {
   font-size: 1em;
   text-align: center;
 }
-/* line 119, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-title a,
+/* line 120, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .hentry .entry-title a {
   border-bottom: none;
 }
-/* line 126, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-content,
+/* line 124, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .hentry .entry-content {
   padding: .5em;
 }
-/* line 129, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-metas,
+/* line 127, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .hentry .entry-metas {
   font-size: .8em;
 }
-/* line 133, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags,
+/* line 131, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags {
   text-align: right;
   padding: .5em;
@@ -138,38 +132,34 @@ body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags {
   font-weight: 100;
   font-size: .9em;
 }
-/* line 139, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul,
+/* line 137, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul {
   margin: 0;
   list-style-type: none;
 }
-/* line 143, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li,
+/* line 141, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li {
   display: inline;
 }
-/* line 145, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a,
+/* line 143, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a {
   color: #d5c5bf;
   text-transform: uppercase;
   font-size: 0.8em;
   font-family: sans-serif;
 }
-/* line 150, ../scss/spiff.scss */
-body .wpsstm-playlists-loop .masonry-sizer .entry-metas div.spiff-station-tags ul li a:before,
+/* line 148, ../scss/spiff.scss */
 body .wpsstm-playlists-loop .hentry .entry-metas div.spiff-station-tags ul li a:before {
   font-family: FontAwesome;
   content: "\f292";
 }
-/* line 164, ../scss/spiff.scss */
+/* line 162, ../scss/spiff.scss */
 body #reddit-scrobbling-notice {
   background: rgba(252, 248, 227, 0.38);
   padding: 0.25em 1em;
 }
 
-/* line 170, ../scss/spiff.scss */
+/* line 168, ../scss/spiff.scss */
 #wpsstm-frontend-wizard-recent ul li a {
   border: none;
 }

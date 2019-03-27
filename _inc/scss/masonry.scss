@@ -1,0 +1,38 @@
+@import "compass/css3";
+
+/**
+ * BOX HACKING
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.spiff-masonry-wrapper {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    .spiff-masonry-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(100px,1fr));
+        grid-gap: 10px;
+        grid-auto-rows: 0;
+        .spiff-masonry-item {
+            margin:0;
+            padding:0;
+            &:hover {
+            }
+            .spiff-masonry-content {
+                overflow: hidden;
+            }
+
+        }
+        
+    }
+}
